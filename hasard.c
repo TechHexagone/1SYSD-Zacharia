@@ -6,9 +6,12 @@ int main() {
   int donnee[100];
   int nombreEntree;
   int n = 0;
+  char names[45];
+  printf("Bonjour, comment tu t'appelles ? ");
+  scanf("%s", &names);
+  
   srand(time(NULL));
-  int nombreDeviner = 50;
-  //int nombreDeviner = rand() % 100 + 1;
+  int nombreDeviner = rand() % 100 + 1;
   int cpt = 0;
   printf("Devine le nombre : ");
   scanf("%d", &nombreEntree);
@@ -31,13 +34,14 @@ int main() {
 
   }
 
+  printf("\n");
   while (n < cpt) {
     printf("Vous avez essayé %d \n", donnee[n]);
     n++;    
   }
   
   
-  printf("\nVous avez gagné !\nLe chiffre/nombre mystère était %d\n", nombreDeviner);
+  printf("\nVous avez gagné %c !\nLe chiffre/nombre mystère était %d\n", names, nombreDeviner);
   
   if (cpt <= 3) {
     printf("Félicitation ! Vous avez trouvé le chiffre/nombre mystère en seulement %d coup(s) !\n", cpt+1);
